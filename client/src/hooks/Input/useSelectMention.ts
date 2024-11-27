@@ -64,7 +64,11 @@ export default function useSelectMention({
         preset.endpointType = newEndpointType;
       }
 
-      if (isAssistantsEndpoint(newEndpoint) && preset.assistant_id != null && !(preset.model ?? '')) {
+      if (
+        isAssistantsEndpoint(newEndpoint) &&
+        preset.assistant_id != null &&
+        !(preset.model ?? '')
+      ) {
         preset.model = assistantMap?.[newEndpoint]?.[preset.assistant_id]?.model;
       }
 
@@ -94,7 +98,14 @@ export default function useSelectMention({
         keepAddedConvos: isModular,
       });
     },
-    [conversation, getDefaultConversation, modularChat, newConversation, endpointsConfig, assistantMap],
+    [
+      conversation,
+      getDefaultConversation,
+      modularChat,
+      newConversation,
+      endpointsConfig,
+      assistantMap,
+    ],
   );
 
   type Kwargs = {
