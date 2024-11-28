@@ -1,6 +1,6 @@
 const express = require('express');
 const AskController = require('~/server/controllers/AskController');
-const { addTitle, initializeClient } = require('~/server/services/Endpoints/openAI');
+const { addTitle, initializeClient } = require('~/server/services/Endpoints/ollama'); // Updated path
 const {
   handleAbort,
   setHeaders,
